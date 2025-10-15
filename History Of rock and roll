@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>History of Rock & Roll — Quiz #2</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;max-width:850px;margin:24px auto;padding:20px;color:#111}
+header{display:flex;align-items:center;gap:12px}
+h1{margin:0;font-size:1.4rem}
+.section{margin-top:18px}
+.q{margin:12px 0;padding:10px;border-radius:6px;background:#f7f7f7}
+label{display:block;cursor:pointer}
+input[type="text"], textarea{width:100%;padding:8px;margin-top:6px}
+button{margin-top:14px;padding:10px 14px;font-weight:600}
+.result{margin-top:16px;padding:12px;border-radius:6px;background:#eef}
+.key{margin-top:12px;background:#fffbe6;padding:12px;border-radius:6px}
+@media print{button{display:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>History of Rock & Roll — Quiz #2</h1>
+</header>
+
+<form id="quiz">
+<div class="section"><strong>Multiple Choice (1 pt each)</strong>
+<div class="q">
+<div>1. Who created the "Wall of Sound"?</div>
+<label><input type="radio" name="q1" value="a"> a) Berry Gordy</label>
+<label><input type="radio" name="q1" value="b"> b) Phil Spector</label>
+<label><input type="radio" name="q1" value="c"> c) Brian Wilson</label>
+<label><input type="radio" name="q1" value="d"> d) George Martin</label>
+</div>
+
+<div class="q">
+<div>2. Which Detroit-based company was known for "pop" soul?</div>
+<label><input type="radio" name="q2" value="a"> a) Atlantic Records</label>
+<label><input type="radio" name="q2" value="b"> b) Motown</label>
+<label><input type="radio" name="q2" value="c"> c) Sun Records</label>
+<label><input type="radio" name="q2" value="d"> d) Chess Records</label>
+</div>
+
+<div class="q">
+<div>3. Which psychedelic drug reshaped 1960s music?</div>
+<label><input type="radio" name="q3" value="a"> a) Cocaine</label>
+<label><input type="radio" name="q3" value="b"> b) Heroin</label>
+<label><input type="radio" name="q3" value="c"> c) LSD</label>
+<label><input type="radio" name="q3" value="d"> d) Marijuana</label>
+</div>
+
+<div class="q">
+<div>4. The Byrds helped create which subgenre?</div>
+<label><input type="radio" name="q4" value="a"> a) Country Rock</label>
+<label><input type="radio" name="q4" value="b"> b) Folk Rock</label>
+<label><input type="radio" name="q4" value="c"> c) Garage Rock</label>
+<label><input type="radio" name="q4" value="d"> d) Psychedelic Rock</label>
+</div>
+
+<div class="q">
+<div>5. Who is often called "the fifth Beatle" for studio work?</div>
+<label><input type="radio" name="q5" value="a"> a) George Martin</label>
+<label><input type="radio" name="q5" value="b"> b) Sam Phillips</label>
+<label><input type="radio" name="q5" value="c"> c) Quincy Jones</label>
+<label><input type="radio" name="q5" value="d"> d) Brian Epstein</label>
+</div>
+</div>
+
+<div class="section"><strong>Short Answer (2 pts each)</strong>
+<div class="q">
+<div>6. What term describes a producer with total creative control?</div>
+<input type="text" name="q6" placeholder="Your answer">
+</div>
+<div class="q">
+<div>7. What California-based style of music did The Beach Boys popularize?</div>
+<input type="text" name="q7" placeholder="Your answer">
+</div>
+<div class="q">
+<div>8. Name the band that defined the surf rock instrumental sound.</div>
+<input type="text" name="q8" placeholder="Your answer">
+</div>
+<div class="q">
+<div>9. Which social force influenced many 1960s musicians to write about social justice and war?</div>
+<input type="text" name="q9" placeholder="Your answer">
+</div>
+<div class="q">
+<div>10. What city was Motown based in?</div>
+<input type="text" name="q10" placeholder="Your answer">
+</div>
+</div>
+
+<div class="section"><strong>True / False (1 pt each)</strong>
+<div class="q">
+<label><input type="radio" name="q11" value="true"> 11. Motown music was known for being raw and unpolished. (True/False)</label>
+<label><input type="radio" name="q11" value="false"> False</label>
+</div>
+<div class="q">
+<label><input type="radio" name="q12" value="true"> 12. The Beach Boys reflected California youth culture. (True/False)</label>
+<label><input type="radio" name="q12" value="false"> False</label>
+</div>
+<div class="q">
+<label><input type="radio" name="q13" value="true"> 13. "Wall of Sound" used layers of instruments for a dense sound. (True/False)</label>
+<label><input type="radio" name="q13" value="false"> False</label>
+</div>
+<div class="q">
+<label><input type="radio" name="q14" value="true"> 14. 1960s folk music often had political messages. (True/False)</label>
+<label><input type="radio" name="q14" value="false"> False</label>
+</div>
+<div class="q">
+<label><input type="radio" name="q15" value="true"> 15. LSD had little impact on 1960s music or art. (True/False)</label>
+<label><input type="radio" name="q15" value="false"> False</label>
+</div>
+</div>
+
+<div class="section"><strong>Bonus (3 pts)</strong>
+<div class="q">
+<div>16. Name two major differences between British Invasion bands and early 1960s American rock bands:</div>
+<textarea name="q16" rows="3" placeholder="Two differences"></textarea>
+</div>
+</div>
+
+<button type="button" onclick="grade()">Submit & Grade</button>
+</form>
+
+<div id="output"></div>
+
+<script>
+const answers = {
+q1: 'b',
+q2: 'b',
+q3: 'c',
+q4: 'b',
+q5: 'a',
+q6: ['producer','record producer','creative producer','auteur'],
+q7: ['surf rock','beach pop','surf-pop','california surf pop','surf pop'],
+q8: ['the ventures','ventures'],
+q9: ['civil rights movement','social movements','civil rights','social justice','anti-war movement','anti war movement'],
+q10: ['detroit'],
+q11: 'false',
+q12: 'true',
+q13: 'true',
+q14: 'true',
+q15: 'false'
+};
+
+function clean(s){ return String(s||'').trim().toLowerCase(); }
+
+function grade(){
+let score=0; let total=0; let details=[];
+// MC (1 pt each)
+for(let i=1;i<=5;i++){ total++; let k='q'+i; let v=document.querySelector(`input[name="${k}"]:checked`); if(v && v.value===answers[k]){ score++; details.push(k+': correct') } else details.push(k+': incorrect') }
+// Short (2 pts each)
+for(let i=6;i<=10;i++){ total+=2; let k='q'+i; let val=clean(document.querySelector(`[name="${k}"]`).value);
+if(!val){ details.push(k+': blank') ; continue }
+let ok=false;
+if(Array.isArray(answers[k])) ok = answers[k].some(a=> val.includes(a));
+else ok = clean(val)===answers[k];
+if(ok){ score+=2; details.push(k+': correct') } else details.push(k+': incorrect') }
+// T/F (1 pt each)
+for(let i=11;i<=15;i++){ total++; let k='q'+i; let v=document.querySelector(`input[name="${k}"]:checked`); if(v && v.value===answers[k]){ score++; details.push(k+': correct') } else details.push(k+': incorrect or blank') }
+// Bonus (freeform, up to 3 pts) - simple keyword check
+total+=3; let bonus = clean(document.querySelector('[name="q16"]').value);
+let bscore=0;
+if(bonus){
+if(bonus.includes('guitar') || bonus.includes('lead guitar') || bonus.includes('riff')) bscore++;
+if(bonus.includes('production') || bonus.includes('studio') || bonus.includes('aesthetic') || bonus.includes('sound')) bscore++;
+if(bonus.includes('influence') || bonus.includes('rhythm and blues') || bonus.includes('songwriting') || bonus.includes('cover')) bscore++;
+if(bscore>3) bscore=3;
+}
+score+=bscore;
+const out=document.getElementById('output');
+out.innerHTML = `<div class="result"><strong>Score: ${score} / ${total}</strong><div style="margin-top:8px"><em>Details:</em><ul>${details.map(d=>'<li>'+d+'</li>').join('')}</ul></div>
+<div class="key"><strong>Answer Key (short answers acceptable variants):</strong>
+<ol>
+<li>Phil Spector</li><li>Motown</li><li>LSD</li><li>Folk Rock</li><li>George Martin</li>
+<li>Record producer / producer with creative control</li><li>Surf rock / surf-pop</li><li>The Ventures</li><li>Civil Rights / anti-war / social movements</li><li>Detroit</li>
+<li>False</li><li>True</li><li>True</li><li>True</li><li>False</li>
+<li>Bonus: answers vary (examples: British Invasion had more emphasis on vocal harmonies, image and singles-driven pop; US bands were more rootsy/R&B-influenced, surf/garage styles, and had different production/industry contexts.)</li>
+</ol></div></div>`;
+out.scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
